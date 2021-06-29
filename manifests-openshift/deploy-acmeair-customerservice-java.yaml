@@ -35,18 +35,18 @@ spec:
           #value: acmeair
           valueFrom:
             secretKeyRef:
-             name: db2fori-credentials
+             name: extdb-credentials
              key: username  
         - name: PASSWORD
           valueFrom:
             secretKeyRef:
-             name: db2fori-credentials
+             name: extdb-credentials
              key: password  
           #value: password
         - name: DATABASE_HOST
-          value: ibmi-database 
+          value: ext-database 
         - name: DATABASE_ALT_HOST
-          value: ibmi-database-alt
+          value: ext-database-alt
         - name: LIBRARY_LIST
           value: acmeair 
         - name: SECURE_SERVICE_CALLS
@@ -69,7 +69,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ibmi-database 
+  name: ext-database 
 spec:
   type: ExternalName
   externalName: bendemo.10.7.19.71.nip.io
@@ -79,7 +79,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ibmi-database-alt
+  name: ext-database-alt
 spec:
   type: ExternalName
   externalName: bendemo2.10.7.19.72.nip.io
