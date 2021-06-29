@@ -174,7 +174,7 @@ public class CustomerServiceImplDb2 extends CustomerService implements Db2Consta
     Connection conn=getConnection();
     
       Statement stmt = conn.createStatement();
-      String sql = "INSERT INTO ACMEAIR.CUSTOMER ID,PASSWORD,STATUS,"+
+      String sql = "INSERT INTO CUSTOMER ID,PASSWORD,STATUS,"+
       "TOTAL_MILES,MILES_YTD,PHONENUMBER,PHONENUMBERTYPE,STREETADDRESS1,STREETADDRESS2,"+
       "CITY, STATEPROVINCE,COUNTRY,POSTALCODE"+
       "VALUES("+customerInfo.get_id()+","+ 
@@ -230,7 +230,7 @@ public class CustomerServiceImplDb2 extends CustomerService implements Db2Consta
     try {
   Connection conn=getConnection();
   //Document address = parseAddressInfo(customerInfo.getAddress());
-  String SQL_UPDATE = "UPDATE ACMEAIR.CUSTOMER set status=?,"+
+  String SQL_UPDATE = "UPDATE CUSTOMER set status=?,"+
   "total_miles=?,"+
   "miles_ytd=?,"+
    "phonenumber=?,"+
@@ -293,7 +293,7 @@ public class CustomerServiceImplDb2 extends CustomerService implements Db2Consta
       Connection conn=getConnection();
       
         Statement stmt = conn.createStatement();
-        String sql = "SELECT * FROM ACMEAIR.CUSTOMER WHERE ID like '%"+username+"%'";
+        String sql = "SELECT * FROM CUSTOMER WHERE ID like '%"+username+"%'";
         stmt.execute(sql);      
         ResultSet rs = stmt.getResultSet();
         CustomerInfo customerInfo= new CustomerInfo();
@@ -336,7 +336,7 @@ public class CustomerServiceImplDb2 extends CustomerService implements Db2Consta
       Connection conn=getConnection();
       
         Statement stmt = conn.createStatement();
-        String sql = "SELECT * FROM ACMEAIR.CUSTOMER WHERE ID like '%"+username+"%'";
+        String sql = "SELECT * FROM CUSTOMER WHERE ID like '%"+username+"%'";
         stmt.execute(sql);      
         ResultSet rs = stmt.getResultSet();
         CustomerInfo customerInfo= new CustomerInfo();
