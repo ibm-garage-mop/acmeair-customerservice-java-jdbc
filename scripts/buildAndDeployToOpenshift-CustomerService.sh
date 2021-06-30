@@ -59,7 +59,7 @@ echo "Route Host=${ROUTE_HOST}"
 cd "$(dirname "$0")"
 cd ..
 cd ../acmeair-customerservice-java-jdbc
-cp -r scripts  script-bak
+cp -r manifests-openshift  manifests-openshift-bak
 if [[ `grep -c ${LIBERTY_IMAGE} ./Dockerfile` == 0 ]]
 then
   echo "Patching Dockerfile : ${LIBERTY_IMAGE}"
@@ -154,4 +154,5 @@ sed -i.bak "s@${DB2FORI_HOSTNAME_ALT}@bendemo2.10.7.19.72.nip.io@" ${MANIFESTS}/
 rm ${MANIFESTS}/acmeair-customerservice-route.yaml.bak
 rm ${MANIFESTS}/deploy-acmeair-customerservice-java.yaml.bak
 
-cp -r scripts-bak/*  scripts
+cp -r manifests-openshift-bak/*  manifests-openshift
+rm -Rf manifests-openshift-bak
