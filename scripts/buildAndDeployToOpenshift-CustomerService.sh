@@ -58,8 +58,8 @@ echo "Image Prefix Internal=${IMAGE_PREFIX}"
 echo "Route Host=${ROUTE_HOST}"
 cd "$(dirname "$0")"
 cd ..
-cd ../acmeair-customerservice-java
-
+cd ../acmeair-customerservice-java-jdbc
+cp -r scripts  script-bak
 if [[ `grep -c ${LIBERTY_IMAGE} ./Dockerfile` == 0 ]]
 then
   echo "Patching Dockerfile : ${LIBERTY_IMAGE}"
@@ -154,4 +154,4 @@ sed -i.bak "s@${DB2FORI_HOSTNAME_ALT}@bendemo2.10.7.19.72.nip.io@" ${MANIFESTS}/
 rm ${MANIFESTS}/acmeair-customerservice-route.yaml.bak
 rm ${MANIFESTS}/deploy-acmeair-customerservice-java.yaml.bak
 
-
+cp -r scripts-bak/*  scripts
