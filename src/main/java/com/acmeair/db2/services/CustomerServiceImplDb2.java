@@ -382,7 +382,7 @@ public class CustomerServiceImplDb2 extends CustomerService implements Db2Consta
 
   @Override
   public String getServiceType() {
-    return "db2 for i";
+    return "backend database";
   }
 
   @Override
