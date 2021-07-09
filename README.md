@@ -1,3 +1,7 @@
+Note: 
+Original project [here](https://github.com/bmarolleau/acmeair-customerservice-java-jdbc).
+This jdbc-based micro-service works with jdbc datasources : tested with Db2 for i, Db2 LUW, Oracle...Just adapt the config file before building the app: [server.xml](https://github.com/ibm-garage-mop/acmeair-customerservice-java-jdbc/blob/main/src/main/liberty/config/server.xml)
+
 # Demonstration : Micro-service Apps w/ IBM i & OpenShift 
 
 Link to the full presentation "[OpenShift & IBM i introduction](https://ibm.box.com/s/dnv8rhh2ikim70t69kcjf9qblehblc0u)" demonstrating how to combine the state of the art db server **IBM i/Db2 for i** with a **cloud native** microservice architecture on **Redhat OpenShift**. 
